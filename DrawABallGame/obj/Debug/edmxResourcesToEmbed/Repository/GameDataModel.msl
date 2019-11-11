@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DrawBallDBModelStoreContainer" CdmEntityContainer="DrawBallDBEntities">
+    <EntitySetMapping Name="DrawGameStats">
+      <EntityTypeMapping TypeName="DrawBallDBModel.DrawGameStat">
+        <MappingFragment StoreEntitySet="DrawGameStats">
+          <ScalarProperty Name="FreeDraw" ColumnName="FreeDraw" />
+          <ScalarProperty Name="RTP" ColumnName="RTP" />
+          <ScalarProperty Name="WinBonus" ColumnName="WinBonus" />
+          <ScalarProperty Name="LeftRounds" ColumnName="LeftRounds" />
+          <ScalarProperty Name="SpentCredit" ColumnName="SpentCredit" />
+          <ScalarProperty Name="DrawCost" ColumnName="DrawCost" />
+          <ScalarProperty Name="TotalBalls" ColumnName="TotalBalls" />
+          <ScalarProperty Name="WonCredit" ColumnName="WonCredit" />
+          <ScalarProperty Name="CreditAlotted" ColumnName="CreditAlotted" />
+          <ScalarProperty Name="RoundIterations" ColumnName="RoundIterations" />
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

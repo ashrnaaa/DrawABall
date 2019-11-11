@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DrawBallDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DrawGameStats">
+    <Key>
+      <PropertyRef Name="GameID" />
+    </Key>
+    <Property Name="GameID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoundIterations" Type="int" Nullable="false" />
+    <Property Name="CreditAlotted" Type="float" Nullable="false" />
+    <Property Name="WonCredit" Type="float" Nullable="false" />
+    <Property Name="TotalBalls" Type="int" Nullable="false" />
+    <Property Name="DrawCost" Type="int" Nullable="false" />
+    <Property Name="SpentCredit" Type="float" Nullable="false" />
+    <Property Name="LeftRounds" Type="int" Nullable="false" />
+    <Property Name="WinBonus" Type="int" Nullable="false" />
+    <Property Name="RTP" Type="float" Nullable="false" />
+    <Property Name="FreeDraw" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DrawBallDBModelStoreContainer">
+    <EntitySet Name="DrawGameStats" EntityType="Self.DrawGameStats" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

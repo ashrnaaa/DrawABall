@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DrawBallDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DrawBallDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DrawGameStats" EntityType="DrawBallDBModel.DrawGameStat" />
+  </EntityContainer>
+  <EntityType Name="DrawGameStat">
+    <Key>
+      <PropertyRef Name="GameID" />
+    </Key>
+    <Property Name="GameID" Type="Guid" Nullable="false" />
+    <Property Name="RoundIterations" Type="Int32" Nullable="false" />
+    <Property Name="CreditAlotted" Type="Double" Nullable="false" />
+    <Property Name="WonCredit" Type="Double" Nullable="false" />
+    <Property Name="TotalBalls" Type="Int32" Nullable="false" />
+    <Property Name="DrawCost" Type="Int32" Nullable="false" />
+    <Property Name="SpentCredit" Type="Double" Nullable="false" />
+    <Property Name="LeftRounds" Type="Int32" Nullable="false" />
+    <Property Name="WinBonus" Type="Int32" Nullable="false" />
+    <Property Name="RTP" Type="Double" Nullable="false" />
+    <Property Name="FreeDraw" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+</Schema>

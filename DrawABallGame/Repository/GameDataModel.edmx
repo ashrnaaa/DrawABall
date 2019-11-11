@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DrawBallDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DrawGameStats">
+          <Key>
+            <PropertyRef Name="GameID" />
+          </Key>
+          <Property Name="GameID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoundIterations" Type="int" Nullable="false" />
+          <Property Name="CreditAlotted" Type="float" Nullable="false" />
+          <Property Name="WonCredit" Type="float" Nullable="false" />
+          <Property Name="TotalBalls" Type="int" Nullable="false" />
+          <Property Name="DrawCost" Type="int" Nullable="false" />
+          <Property Name="SpentCredit" Type="float" Nullable="false" />
+          <Property Name="LeftRounds" Type="int" Nullable="false" />
+          <Property Name="WinBonus" Type="int" Nullable="false" />
+          <Property Name="RTP" Type="float" Nullable="false" />
+          <Property Name="FreeDraw" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DrawBallDBModelStoreContainer">
+          <EntitySet Name="DrawGameStats" EntityType="Self.DrawGameStats" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DrawBallDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DrawBallDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DrawGameStats" EntityType="DrawBallDBModel.DrawGameStat" />
+        </EntityContainer>
+        <EntityType Name="DrawGameStat">
+          <Key>
+            <PropertyRef Name="GameID" />
+          </Key>
+          <Property Name="GameID" Type="Guid" Nullable="false" />
+          <Property Name="RoundIterations" Type="Int32" Nullable="false" />
+          <Property Name="CreditAlotted" Type="Double" Nullable="false" />
+          <Property Name="WonCredit" Type="Double" Nullable="false" />
+          <Property Name="TotalBalls" Type="Int32" Nullable="false" />
+          <Property Name="DrawCost" Type="Int32" Nullable="false" />
+          <Property Name="SpentCredit" Type="Double" Nullable="false" />
+          <Property Name="LeftRounds" Type="Int32" Nullable="false" />
+          <Property Name="WinBonus" Type="Int32" Nullable="false" />
+          <Property Name="RTP" Type="Double" Nullable="false" />
+          <Property Name="FreeDraw" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DrawBallDBModelStoreContainer" CdmEntityContainer="DrawBallDBEntities">
+          <EntitySetMapping Name="DrawGameStats">
+            <EntityTypeMapping TypeName="DrawBallDBModel.DrawGameStat">
+              <MappingFragment StoreEntitySet="DrawGameStats">
+                <ScalarProperty Name="FreeDraw" ColumnName="FreeDraw" />
+                <ScalarProperty Name="RTP" ColumnName="RTP" />
+                <ScalarProperty Name="WinBonus" ColumnName="WinBonus" />
+                <ScalarProperty Name="LeftRounds" ColumnName="LeftRounds" />
+                <ScalarProperty Name="SpentCredit" ColumnName="SpentCredit" />
+                <ScalarProperty Name="DrawCost" ColumnName="DrawCost" />
+                <ScalarProperty Name="TotalBalls" ColumnName="TotalBalls" />
+                <ScalarProperty Name="WonCredit" ColumnName="WonCredit" />
+                <ScalarProperty Name="CreditAlotted" ColumnName="CreditAlotted" />
+                <ScalarProperty Name="RoundIterations" ColumnName="RoundIterations" />
+                <ScalarProperty Name="GameID" ColumnName="GameID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
